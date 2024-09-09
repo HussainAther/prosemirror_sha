@@ -1,70 +1,99 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# ProseMirror Autocomplete Editor
 
-In the project directory, you can run:
+A rich-text editor built with ProseMirror that provides autocomplete functionality for hashtags (`#`), mentions (`@`), and related ideas (`<>`). This project demonstrates a custom implementation of an autocomplete feature using ProseMirror in a React application, ideal for enhancing text editing with intelligent suggestions.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Autocomplete Suggestions**: Automatically suggests hashtags, mentions, and related terms as you type.
+- **Keyboard Navigation**: Navigate through suggestions using arrow keys and select with Enter or Tab.
+- **Customizable**: Easily extend the list of suggestions with your own data sources.
+- **Responsive and Accessible**: Built with accessibility in mind, supporting keyboard navigation and screen readers.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+Follow these instructions to set up and run the project on your local machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Ensure you have the following installed on your machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v14 or later)
+- npm (v6 or later)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the repository and install the dependencies:
 
-### `npm run eject`
+```bash
+git clone https://github.com/HussainAther/prosemirror_sha.git
+cd prosemirror_sha
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Running the Application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application will be available at `http://localhost:3000`.
 
-## Learn More
+### Running Tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The project includes tests to verify the functionality of the editor:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm test
+```
 
-### Code Splitting
+Make sure all tests pass successfully before making any changes or submitting pull requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+- **Typing Triggers**: Start typing with `#`, `@`, or `<>` to activate autocomplete suggestions.
+- **Selecting Suggestions**: Use the up and down arrow keys to navigate suggestions. Press Enter or Tab to select a suggestion.
+- **Customization**: Modify the autocomplete plugin to add new triggers or data sources as needed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Structure
 
-### Making a Progressive Web App
+- **`src/components`**: Contains all React components, including the editor (`ProseMirrorEditor.js`), autocomplete suggestions (`AutocompleteSuggestions.js`), and supporting components.
+- **`src/plugins`**: Includes the ProseMirror plugin (`autocomplete.js`) that manages the autocomplete functionality.
+- **`public`**: Static assets and the main `index.html`.
+- **`README.md`**: Project documentation (you're reading it!).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Customization and Extensions
 
-### Advanced Configuration
+You can easily customize the editor and autocomplete functionality by modifying the plugin configuration in `src/plugins/autocomplete.js`. Add new triggers, update the list of suggestions, or tweak the filtering logic to match your requirements.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Deployment
 
-### Deployment
+To deploy the project, build the application with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm run build
+```
 
-### `npm run build` fails to minify
+This will generate a `build` directory with the production-ready application. Deploy this directory to your preferred hosting platform (e.g., Vercel, Netlify, GitHub Pages).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Known Issues and Limitations
+
+- **Large Datasets**: Performance may degrade with very large datasets for suggestions. Consider implementing lazy loading or pagination for extensive lists.
+- **Multiple Triggers**: Ensure the editor handles multiple triggers correctly in the same line or paragraph.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository, create a new branch for your feature or bug fix, and submit a pull request with a clear description of your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Acknowledgments
+
+- **ProseMirror**: A toolkit for building rich-text editors on the web.
+- **React**: A JavaScript library for building user interfaces.
+
