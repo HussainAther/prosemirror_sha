@@ -6,9 +6,8 @@ import AutocompleteEditor from './components/AutocompleteEditor';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <ProseMirrorEditor />
-      </header>
+      <h1>Draft.js Autocomplete Editor</h1>
+      <AutocompleteEditor />  {/* Ensure this is rendered here */}
     </div>
   );
 }
