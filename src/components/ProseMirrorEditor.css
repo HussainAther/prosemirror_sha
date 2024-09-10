@@ -1,0 +1,69 @@
+/* ProseMirrorEditor.css */
+
+/* Basic container styling for the ProseMirror editor */
+.editor {
+    border: 1px solid #ddd; /* Light border to define the editor area */
+    padding: 12px;           /* Space inside the editor for comfortable typing */
+    min-height: 200px;       /* Minimum height to give the editor a reasonable starting size */
+    font-family: Arial, sans-serif; /* Use a readable, standard font */
+    font-size: 14px;         /* Set a default font size */
+    line-height: 1.5;        /* Improve readability with adequate line height */
+    background-color: #fff;  /* White background for good contrast */
+    border-radius: 4px;      /* Slightly rounded corners */
+    overflow-y: auto;        /* Allow vertical scrolling if content overflows */
+}
+
+/* Focus state to highlight the editor when it is active */
+.editor:focus {
+    border-color: #0070f3;   /* Change border color to blue when focused */
+    outline: none;           /* Remove default outline for a cleaner look */
+    box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2); /* Add subtle shadow to indicate focus */
+}
+
+/* Styling for placeholder text, if applicable */
+.editor .ProseMirror-placeholder:before {
+    content: attr(data-placeholder); /* Use the data-placeholder attribute to show placeholder text */
+    color: #888;                     /* Gray color for placeholder text */
+    position: absolute;
+    pointer-events: none;            /* Prevent interaction with the placeholder */
+}
+
+/* Autocomplete suggestions dropdown */
+.autocomplete-suggestions {
+    position: absolute;         /* Position relative to the editor */
+    background-color: #fff;     /* Match the editor's background */
+    border: 1px solid #ddd;     /* Border to define the dropdown */
+    border-radius: 4px;         /* Rounded corners to match the editor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    z-index: 1000;              /* High z-index to overlay above other elements */
+    max-height: 150px;          /* Limit height to avoid excessive scrolling */
+    overflow-y: auto;           /* Enable scrolling within the dropdown */
+    width: 200px;               /* Fixed width; adjust as necessary */
+}
+
+/* Individual suggestion item styling */
+.suggestion {
+    padding: 8px 12px;        /* Padding for clickable area */
+    cursor: pointer;          /* Indicate that items are clickable */
+}
+
+/* Highlighted suggestion item on hover or navigation */
+.suggestion.highlighted {
+    background-color: #f0f0f0; /* Light background to indicate selection */
+    color: #0070f3;            /* Use blue for highlighted text */
+}
+
+/* Customize scrollbar for dropdown if needed */
+.autocomplete-suggestions::-webkit-scrollbar {
+    width: 6px;
+}
+
+.autocomplete-suggestions::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Match scrollbar color with dropdown style */
+    border-radius: 3px;
+}
+
+.autocomplete-suggestions::-webkit-scrollbar-thumb:hover {
+    background-color: #bbb; /* Darken thumb on hover */
+}
+
