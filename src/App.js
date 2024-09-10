@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ProseMirrorEditor from './components/ProseMirrorEditor';
+import AutocompleteEditor from './components/AutocompleteEditor';
 
 function App() {
   return (
