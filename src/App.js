@@ -6,11 +6,12 @@ import AutocompleteEditor from './components/AutocompleteEditor';
 function App() {
   return (
     <div className="App">
-      <h1>Draft.js Autocomplete Editor</h1>
-      <AutocompleteEditor />  {/* Ensure this is rendered here */}
+      <h1>Editor Demo</h1>
+      {/* Uncomment the line below to use ProseMirrorEditor */}
+      <ProseMirrorEditor /> 
+      <AutocompleteEditor />
     </div>
   );
 }
 
 export default App;
-
