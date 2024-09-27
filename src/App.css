@@ -1,19 +1,8 @@
+/* App.css */
+
+/* General App Styles */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,17 +11,92 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+}
+
+.App-header {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #61dafb;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+/* Keyframe for Logo Animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Editor Container */
+.editor-container {
+  width: 60%; /* Adjust width as needed */
+  max-width: 800px;
+  background-color: #fff; /* White background for editor */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Internal padding */
+  margin: 20px auto; /* Center in parent */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  color: #000; /* Text color inside editor */
+}
+
+/* Placeholder Text for the Editor */
+.public-DraftEditorPlaceholder-root {
+  color: #999;
+  font-style: italic;
+}
+
+/* Styling for the Editor Content */
+.public-DraftEditor-content {
+  min-height: 200px; /* Minimum height for content area */
+  padding: 10px;
+  font-size: 16px; /* Font size for text inside editor */
+}
+
+/* Autocomplete Suggestions Box */
+.autocomplete-suggestions {
+  position: absolute;
+  width: 60%; /* Match the editor width */
+  max-width: 800px;
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ccc; /* Border around suggestions */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow */
+  max-height: 200px; /* Limit height */
+  overflow-y: auto; /* Scroll if too many suggestions */
+  z-index: 100; /* Ensure it's above other elements */
+  margin-top: 5px; /* Space between editor and suggestions */
+}
+
+/* Individual Suggestion Styles */
+.suggestion {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee; /* Separate suggestions */
+  font-size: 16px; /* Font size for suggestions */
+}
+
+/* Highlighted Suggestion */
+.suggestion.highlighted {
+  background-color: #efefef; /* Light gray highlight */
+  font-weight: bold; /* Make highlighted suggestion bold */
+}
+
+/* Handle Mobile Responsiveness */
+@media (max-width: 768px) {
+  .editor-container,
+  .autocomplete-suggestions {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .App-header {
+    font-size: 1.5em; /* Adjust header size */
   }
 }
