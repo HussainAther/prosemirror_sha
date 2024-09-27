@@ -1,6 +1,6 @@
 // src/components/AutocompleteEditor.js
 import React, { useState, useEffect, useRef } from 'react';
-import { Editor, EditorState, RichUtils, Modifier } from 'draft-js';
+import { Editor, EditorState, RichUtils, Modifier, getDefaultKeyBinding } from 'draft-js';
 import 'draft-js/dist/Draft.css';
 
 const AutocompleteEditor = () => {
@@ -30,6 +30,7 @@ const AutocompleteEditor = () => {
     const currentContentBlock = contentState.getBlockForKey(anchorKey);
     const text = currentContentBlock.getText();
     const triggerMatch = text.match(/[@#<>][\w]*$/); // Match #, @, <> triggers
+
     if (triggerMatch) {
       const matchedTrigger = triggerMatch[0][0]; // Get the trigger character
       const matchString = triggerMatch[0].slice(1); // Extract the match string
@@ -37,6 +38,7 @@ const AutocompleteEditor = () => {
       if (matchedTrigger === '#') type = 'hashtag';
       else if (matchedTrigger === '@') type = 'person';
       else if (matchedTrigger === '<') type = 'relation';
+
       if (type) {
         const filteredSuggestions = fakeData[type].filter((item) =>
           item.startsWith(`${matchedTrigger}${matchString}`)
@@ -73,6 +75,7 @@ const AutocompleteEditor = () => {
     const currentBlock = currentContent.getBlockForKey(anchorKey);
     const blockText = currentBlock.getText();
     const triggerMatch = blockText.match(/[@#<>][\w]*$/);
+
     if (!triggerMatch) return;
 
     const matchString = triggerMatch[0];
@@ -107,12 +110,17 @@ const AutocompleteEditor = () => {
     }
   };
 
+  const onClickSuggestion = (index) => {
+    setHighlightedIndex(index);
+    insertSuggestion();
+  };
+
   useEffect(() => {
     editorRef.current.focus();
   }, []);
 
   return (
-    <div onKeyDown={handleArrowNavigation}>
+    <div onKeyDown={handleArrowNavigation} onClick={() => editorRef.current.focus()}>
       <Editor
         ref={editorRef}
         editorState={editorState}
@@ -127,6 +135,7 @@ const AutocompleteEditor = () => {
             <div
               key={suggestion}
               className={`suggestion ${index === highlightedIndex ? 'highlighted' : ''}`}
+              onMouseDown={() => onClickSuggestion(index)} // Use onMouseDown instead of onClick to avoid losing focus
             >
               {suggestion}
             </div>
@@ -138,4 +147,3 @@ const AutocompleteEditor = () => {
 };
 
 export default AutocompleteEditor;
-
