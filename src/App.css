@@ -47,7 +47,6 @@
   color: #000; /* Text color inside editor */
   position: relative; /* Ensure it is relative for absolute elements */
   overflow: hidden; /* Prevent overflow issues */
-  z-index: 1; /* Ensure it's on top of other elements */
 }
 
 /* Placeholder Text for the Editor */
@@ -65,18 +64,6 @@
   background-color: #fafafa; /* Slightly different background */
   border-radius: 4px; /* Inner border radius */
 }
-
-/* Debugging Styles (Temporary) */
-/* Uncomment the following lines for debugging positioning issues */
-/*
-.public-DraftEditor-content {
-  outline: 1px solid red; /* See the boundary of the content */
-}
-
-.editor-container {
-  border: 2px solid blue; /* See the boundary of the editor container */
-}
-*/
 
 /* Autocomplete Suggestions Box */
 .autocomplete-suggestions {
@@ -109,6 +96,11 @@
   font-weight: bold; /* Make highlighted suggestion bold */
 }
 
+/* Global Box-Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Handle Mobile Responsiveness */
 @media (max-width: 768px) {
   .editor-container,
@@ -120,4 +112,3 @@
     font-size: 1.5em; /* Adjust header size */
   }
 }
-
