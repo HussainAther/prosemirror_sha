@@ -1,5 +1,3 @@
-/* App.css */
-
 /* General App Styles */
 .App {
   text-align: center;
@@ -14,12 +12,14 @@
   padding: 20px;
 }
 
+/* Header Styling */
 .App-header {
   font-size: 2em;
   margin-bottom: 20px;
   color: #61dafb;
 }
 
+/* Link Styling */
 .App-link {
   color: #61dafb;
 }
@@ -45,6 +45,9 @@
   margin: 20px auto; /* Center in parent */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
   color: #000; /* Text color inside editor */
+  position: relative; /* Ensure it is relative for absolute elements */
+  overflow: hidden; /* Prevent overflow issues */
+  z-index: 1; /* Ensure it's on top of other elements */
 }
 
 /* Placeholder Text for the Editor */
@@ -58,12 +61,26 @@
   min-height: 200px; /* Minimum height for content area */
   padding: 10px;
   font-size: 16px; /* Font size for text inside editor */
+  color: #333; /* Ensure text is visible */
+  background-color: #fafafa; /* Slightly different background */
+  border-radius: 4px; /* Inner border radius */
+}
+
+/* Debugging Styles (Temporary) */
+/* Uncomment the following lines for debugging positioning issues */
+.public-DraftEditor-content {
+  outline: 1px solid red; // See the boundary of the content
+}
+
+.editor-container {
+  border: 2px solid blue; // See the boundary of the editor container
 }
 
 /* Autocomplete Suggestions Box */
 .autocomplete-suggestions {
   position: absolute;
-  width: 60%; /* Match the editor width */
+  left: 0; /* Align with the editor */
+  width: 100%; /* Match the editor width */
   max-width: 800px;
   background-color: #ffffff; /* White background */
   border: 1px solid #ccc; /* Border around suggestions */
@@ -81,11 +98,12 @@
   cursor: pointer;
   border-bottom: 1px solid #eee; /* Separate suggestions */
   font-size: 16px; /* Font size for suggestions */
+  background-color: #fff; /* Background color */
 }
 
 /* Highlighted Suggestion */
 .suggestion.highlighted {
-  background-color: #efefef; /* Light gray highlight */
+  background-color: #f0f0f0; /* Light gray highlight */
   font-weight: bold; /* Make highlighted suggestion bold */
 }
 
