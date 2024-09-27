@@ -47,6 +47,10 @@
   color: #000; /* Text color inside editor */
   position: relative; /* Ensure it is relative for absolute elements */
   overflow: hidden; /* Prevent overflow issues */
+  z-index: 1; /* Ensure it's on top of other elements */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: flex-start; /* Align items at the start */
 }
 
 /* Placeholder Text for the Editor */
@@ -63,6 +67,7 @@
   color: #333; /* Ensure text is visible */
   background-color: #fafafa; /* Slightly different background */
   border-radius: 4px; /* Inner border radius */
+  flex: 1; /* Allow content to grow */
 }
 
 /* Autocomplete Suggestions Box */
@@ -95,6 +100,17 @@
   background-color: #f0f0f0; /* Light gray highlight */
   font-weight: bold; /* Make highlighted suggestion bold */
 }
+
+/* Debugging Styles (Temporary) */
+/* Uncomment the following lines for debugging positioning issues */
+
+.public-DraftEditor-content {
+  outline: 1px solid red; /* See the boundary of the content */
+}
+.editor-container {
+  border: 2px solid blue; /* See the boundary of the editor container */
+}
+*/
 
 /* Global Box-Sizing */
 *, *::before, *::after {
