@@ -101,17 +101,6 @@
   font-weight: bold; /* Make highlighted suggestion bold */
 }
 
-/* Debugging Styles (Temporary) */
-/* Uncomment the following lines for debugging positioning issues */
-
-.public-DraftEditor-content {
-  outline: 1px solid red; /* See the boundary of the content */
-}
-.editor-container {
-  border: 2px solid blue; /* See the boundary of the editor container */
-}
-*/
-
 /* Global Box-Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
