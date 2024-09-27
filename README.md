@@ -2,7 +2,7 @@
 
 # ProseMirror Autocomplete Editor
 
-This is a rich-text editor built with ProseMirror that provides autocomplete functionality for hashtags (`#`), mentions (`@`), and related ideas (`<>`). This project demonstrates a custom implementation of an autocomplete feature using ProseMirror in a React application, ideal for enhancing text editing with intelligent suggestions.
+This  is a rich-text editor built with ProseMirror that provides autocomplete functionality for hashtags (`#`), mentions (`@`), and related ideas (`<>`). This project demonstrates a custom implementation of an autocomplete feature using ProseMirror in a React application, ideal for enhancing text editing with intelligent suggestions.
 
 ## Features
 
