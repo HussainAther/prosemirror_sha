@@ -10,6 +10,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 20px;
+  overflow: hidden; /* Ensure children do not overflow */
 }
 
 /* Header Styling */
@@ -36,8 +37,9 @@
 
 /* Editor Container */
 .editor-container {
-  width: 60%; /* Adjust width as needed */
+  width: 80%; /* Increased width for visibility */
   max-width: 800px;
+  height: 400px; /* Explicit height to avoid collapse */
   background-color: #fff; /* White background for editor */
   border: 1px solid #ddd; /* Light border */
   border-radius: 8px; /* Rounded corners */
@@ -46,8 +48,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
   color: #000; /* Text color inside editor */
   position: relative; /* Ensure it is relative for absolute elements */
-  overflow: hidden; /* Prevent overflow issues */
-  z-index: 1; /* Ensure it's on top of other elements */
+  overflow: auto; /* Allow internal scrolling if necessary */
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Arrange children in a column */
   justify-content: flex-start; /* Align items at the start */
