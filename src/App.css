@@ -10,7 +10,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 20px;
-  overflow: hidden; /* Ensure children do not overflow */
+  overflow: auto; /* Changed from hidden to auto to prevent clipping */
 }
 
 /* Header Styling */
@@ -39,7 +39,8 @@
 .editor-container {
   width: 80%; /* Increased width for visibility */
   max-width: 800px;
-  height: 400px; /* Explicit height to avoid collapse */
+  min-height: 400px; /* Set a minimum height instead of a fixed height */
+  height: auto; /* Allow container to grow with content */
   background-color: #fff; /* White background for editor */
   border: 1px solid #ddd; /* Light border */
   border-radius: 8px; /* Rounded corners */
@@ -63,12 +64,13 @@
 /* Styling for the Editor Content */
 .public-DraftEditor-content {
   min-height: 200px; /* Minimum height for content area */
+  height: auto; /* Allow height to grow */
   padding: 10px;
   font-size: 16px; /* Font size for text inside editor */
   color: #333; /* Ensure text is visible */
   background-color: #fafafa; /* Slightly different background */
   border-radius: 4px; /* Inner border radius */
-  flex: 1; /* Allow content to grow */
+  flex-grow: 1; /* Allow content to grow */
 }
 
 /* Autocomplete Suggestions Box */
@@ -83,7 +85,7 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow */
   max-height: 200px; /* Limit height */
   overflow-y: auto; /* Scroll if too many suggestions */
-  z-index: 100; /* Ensure it's above other elements */
+  z-index: 9999; /* Ensure it's above other elements */
   margin-top: 5px; /* Space between editor and suggestions */
 }
 
